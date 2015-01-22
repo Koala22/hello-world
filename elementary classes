@@ -1,0 +1,42 @@
+#  first class, just adding/printing
+class Aaa:
+
+    def __init__(self):
+        self.str1="dummy"
+        self.int1=1
+    def addition(self,x):
+        return self.int1 + x
+    def varreturn(self):
+        return (self.str1 + " test")
+
+my_var = Aaa()
+my_var.str1 = "xxx"    #  is there a way to prevent variables from a class to be modified from outside the class?
+print (my_var.addition(3))
+print (my_var.varreturn())
+
+#  my second class, defining a beer unit by three parameters
+class BeerSKU:
+    def __init__(self):
+        self.name = ""
+        self.colour = ""
+        self.brewery = ""
+    def addBeer(self, name, colour, brewery):
+        if name == "":
+            return "Please add the name of the beer"
+        elif colour != "bright" and colour != "dark":
+            return "Please define proper colour"
+        elif brewery == "":
+            return "Please fill out the brewery name"
+
+        self.name = name
+        self.colour = colour
+        self.brewery = brewery
+
+# testing if the class works
+beer = BeerSKU()
+print (beer.name)
+name = "piworaz"
+colour = "bright"
+brewery = "pinta"
+beer.addBeer(name, colour, brewery)
+print (beer.name)
